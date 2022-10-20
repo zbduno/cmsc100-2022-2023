@@ -1,13 +1,18 @@
 {
-    "extends": [
-      "semistandard"
-    ],
-    "parser": "@babel/eslint-parser",
-    "plugins": [
-      "html",
-      "standard",
-      "promise",
-      "mocha",
-      "chai-expect"
-    ]
-  }
+  "extends": [
+    "semistandard"
+  ],
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
+  "plugins": [
+    "html",
+    "standard",
+    "promise",
+    "mocha",
+    "chai-expect"
+  ]
+}
