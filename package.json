@@ -3,12 +3,16 @@
   "version": "0.0.1",
   "description": "Todo App",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/index",
+    "semistandard": "semistandard --fix",
+    "tap": "c8 --lines 80 --functions 80 --branches 80 --statements 80 --check-coverage --per-file tap test/**/*.test.js --no-coverage",
+    "test": "npm run semistandard && npm run tap"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zbduno/cmsc100-2022-2023.git"
+    "url": "git+https://github.com/tjmonsi/cmsc100-2022-2023.git"
   },
   "keywords": [
     "Node",
@@ -16,27 +20,32 @@
     "Web",
     "Server"
   ],
-  "author": "Zyra Duno",
+  "author": "TJ Monserrat",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/zbduno/cmsc100-2022-2023/issues"
+    "url": "https://github.com/tjmonsi/cmsc100-2022-2023/issues"
   },
-  "homepage": "https://github.com/zbduno/cmsc100-2022-2023#readme",
+  "homepage": "https://github.com/tjmonsi/cmsc100-2022-2023#readme",
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/plugin-proposal-decorators": "^7.19.6",
-    "@babel/plugin-proposal-object-rest-spread": "^7.19.4",
-    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/plugin-proposal-decorators": "^7.19.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.18.9",
+    "@babel/plugin-transform-runtime": "^7.19.1",
+    "@babel/preset-env": "^7.19.3",
+    "c8": "^7.12.0",
     "eslint": "8.19.0",
     "eslint-config-semistandard": "16.0.0",
     "eslint-config-standard": "17.0.0",
     "eslint-plugin-chai-expect": "3.0.0",
     "eslint-plugin-html": "6.2.0",
-    "eslint-plugin-mocha": "10.0.5",
+    "eslint-plugin-mocha": "^10.0.5",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-standard": "4.1.0",
-    "semistandard": "^16.0.1"
+    "must": "^0.13.4",
+    "nodemon": "^2.0.20",
+    "semistandard": "^16.0.1",
+    "tap": "^16.3.0"
   },
   "semistandard": {
     "plugins": [
@@ -47,7 +56,18 @@
       "chai-expect"
     ],
     "parser": "@babel/eslint-parser",
-    "env": [],
-    "globals": []
+    "env": [
+      "mocha"
+    ],
+    "globals": [
+      "describe",
+      "it",
+      "after",
+      "before",
+      "expect"
+    ]
+  },
+  "dependencies": {
+    "fastify": "^4.7.0"
   }
 }
