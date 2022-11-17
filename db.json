@@ -1,4 +1,19 @@
 {
-  "todos": {},
-  "test": 1666321481601
+  "todos": {
+    "884c229b-761f-48e0-96e4-4d74bde88c26": {
+      "title": "New Todo",
+      "description": "Some description",
+      "isDone": false,
+      "createdDate": 1668703109889,
+      "updatedDate": 1668703109889
+    },
+    "06033f2e-3a06-40da-bb55-6577b7cc8272": {
+      "title": "New Todo 2",
+      "description": "Some description 2",
+      "isDone": true,
+      "createdDate": 1668703109899,
+      "updatedDate": 1668703109899
+    }
+  },
+  "test": 1668703109279
 }
